@@ -1,21 +1,18 @@
 def compute(n):
     if n < 10:
-        return n ** 2
-    
-    # n should be grester than 10 and less than 20
-    elif n >= 10 and n <= 20: 
-        fact = 1
-    # loop should run from 1 to n-9    
-        for i in range(1, n - 9):   
-            fact *= i
-        return fact
-    elif n > 20:
-        total = 0
-     # Also for sum calculation loop should run from 1 to n-19   
-        for i in range(1, n - 19):
-            total += i
-        return total
+        out = n ** 2
+     # 2-nd elseif condition has been changed and no it is runnig between 10 and 20   
+    elif n >= 10 and n < 20:
+        out = 1
+     # Loop has been changed and now runnig from (1,n-10+1)  
+        for i in range(1, n - 10 + 1):
+            out *= i
+    else:
+        lim = n - 20
+        # calculating the output using sum fuction in the range from 1, lim+1
+        out = sum(range(1, lim + 1))
+    return out
 
-
-print(compute(5))  
-
+n = int(input("Enter an integer: "))
+result = compute(n)
+print(result)
