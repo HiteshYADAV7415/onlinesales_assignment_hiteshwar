@@ -16,6 +16,6 @@ def compute(n):
             total += i
         return total
 
-# Test cases
-print(compute(1))  
+
+print(compute(5))  
 
