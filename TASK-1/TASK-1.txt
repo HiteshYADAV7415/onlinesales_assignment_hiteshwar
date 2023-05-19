@@ -1,0 +1,7 @@
+SELECT d.NAME AS DepartmentName, AVG(s.amt_usd) AS AverageMonthlySalary
+FROM DEPARTMENT d
+JOIN EMPLOYEE e ON d.ID = e.DEPT_ID
+JOIN SALARIES s ON e.ID = s.EMP_ID 
+GROUP BY d.ID, d.NAME
+ORDER BY AverageMonthlySalary DESC
+LIMIT 3;
